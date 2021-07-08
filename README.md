@@ -42,15 +42,15 @@ need to continue to work on my machine.
 # Testing your Server
 
 Once you have finished coding your server, it needs to be exported into a runnable jar file.  
-The gradle configuration will take care of this for you.  Form the command line 
+The gradle configuration will take care of this for you.  From the command line 
 (from the root of your project) run the following command:
 
-`./gradlew allJar`
+`./gradlew`
 
 This will export a runnable jar file into the root/build/libs folder.  Send this file to 
 me so your server can be tested.  To test locally, navigate to the libs folder and run the following command:
 
-`java -jar SocketServer-Kata-all-0.0.1-SNAPSHOT.jar`
+`java -jar SocketServer-Kata-0.0.1-SNAPSHOT.jar`
 
 This is set to automatically run the main method in the com.smt.server.socket.SMTWebServer class
 
