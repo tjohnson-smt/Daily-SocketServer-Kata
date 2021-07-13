@@ -45,7 +45,7 @@ Once you have finished coding your server, it needs to be exported into a runnab
 The gradle configuration will take care of this for you.  From the command line 
 (from the root of your project) run the following command:
 
-`./gradlew`
+`./gradlew clean assemble`
 
 This will export a runnable jar file into the root/build/libs folder.  Send this file to 
 me so your server can be tested.  To test locally, navigate to the libs folder and run the following command:
