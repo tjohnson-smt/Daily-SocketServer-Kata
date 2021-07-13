@@ -4,7 +4,7 @@ plugins {
     id "io.freefair.lombok" version "6.0.0-m2"
 }
 
-group = 'Team Name Here'
+archivesBaseName = 'Team Name Here'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
