@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.List;
 
 /****************************************************************************
  * <b>Title:</b> RequestHandler.java
@@ -24,8 +25,12 @@ import java.net.Socket;
 @Log4j2
 public class RequestHandler implements Runnable{
 
-    protected Socket clientSocket = null;
-    protected String serverName = null;
+    private Socket clientSocket;
+    private String serverName;
+    private List<ParameterVO> headers;
+    private List<ParameterVO> params;
+    private FileHandler returnFile;
+    private byte[] reqData;
 
     /**
      * Constructor for the request handler.
@@ -58,5 +63,40 @@ public class RequestHandler implements Runnable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    
+    /**
+     * Loads the request data.
+     */
+    private void loadData() {
+    	
+    }
+    
+    /**
+     * Parses the headers out of the request data into the headers list.
+     */
+    private void parseHeaders() {
+    	
+    }
+    
+    /**
+     * Get the file name requested by the request, and set the file object.
+     */
+    private void parseFile() {
+    	
+    }
+    
+    /**
+     * Parses the parameters out of the request data into the parameters list.
+     */
+    private void parseParameters() {
+    	
+    }
+    
+    /**
+     * Sets an error object when an error occurs.
+     */
+    private void setError() {
+    	
     }
 }

@@ -26,10 +26,11 @@ import java.io.IOException;
 @Log4j2
 public class SMTWebServer implements Runnable {
 	
-    protected static int serverPort = 8080; // default port
-    protected boolean isStopped = false;
-    protected ServerSocket serverSocket = null;
-    protected Thread runningThread = null;
+    private static int serverPort = 8080; // default port
+    private boolean isStopped = false;
+    private ServerSocket serverSocket = null;
+    private Thread runningThread = null;
+    private ConfigurationHandler config;
 
     /**
      * Web server constructor, with initialization.
@@ -44,6 +45,9 @@ public class SMTWebServer implements Runnable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		// Initialize the configuration.
+		
+		
 		// Initialize the server.
 		SMTWebServer webServer = new SMTWebServer(8081);
 		new Thread(webServer).start();
