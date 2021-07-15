@@ -2,6 +2,15 @@ package com.smt.server.socket;
 
 // Java 11
 import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import lombok.extern.log4j.Log4j2;
 
 /****************************************************************************
  * <b>Title:</b> Configuration.java
@@ -18,7 +27,7 @@ import java.util.HashMap;
 
 public class ConfigurationHandler {
 	
-	private HashMap<String, String> serverOptions;
+	private static HashMap<String, String> serverOptions;
 
 	/**
 	 * Configuration constructor.
@@ -29,11 +38,24 @@ public class ConfigurationHandler {
 	
 	/**
 	 * Loads the configuration from the file system into memory.
+	 * @throws IOException 
 	 */
-	public void loadConfig() {
+	public static void loadConfig() throws IOException {
+		// initialize hash map
+		serverOptions = new HashMap<>();
 		// Get config from file system
-		
-		// Load config to map
+		Class<ConfigurationHandler> configurationHandler = ConfigurationHandler.class;
+		InputStream inputStream = configurationHandler.getResourceAsStream("/Config/app.properties");
+		InputStreamReader isReader = new InputStreamReader(inputStream);
+	      //Creating a BufferedReader object
+	      BufferedReader reader = new BufferedReader(isReader);
+	      String str;
+	      while((str = reader.readLine())!= null){
+	    	  if (str.contains("=")) {
+	    		 String[] config = str.split(" = ", 2);
+	 	         serverOptions.put(config[0], config[1]);
+	    	  }
+	      }
 	}
 	
 	/**

@@ -65,8 +65,6 @@ public class SMTWebServer implements Runnable {
 		log.info("Stopping SMT Web Server");
 		webServer.stop();
 	}
-	
-//	test comment
     
 	/**
 	 * Runs the server main thread.
